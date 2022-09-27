@@ -1,7 +1,7 @@
 <form action="" [formGroup]="signupForm" autocomplete="off" (ngSubmit)="register()">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Login</mat-card-title>
+      <mat-card-title>Registro</mat-card-title>
       <mat-card-subtitle>Por favor ingrese sus datos</mat-card-subtitle>
     </mat-card-header>
     <p>
@@ -18,6 +18,14 @@
         <mat-label>Password</mat-label>
         <input type="password" formControlName="password" matInput>
         <mat-hint>Ingrese su contraseña</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-icon matSuffix>password</mat-icon>
+        <mat-label>Confirmar Password</mat-label>
+        <input type="password" formControlName="password" matInput>
+        <mat-hint>Ingrese su contraseña de nuevo</mat-hint>
       </mat-form-field>
     </p>
 
