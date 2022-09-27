@@ -1,0 +1,29 @@
+<form action="" [formGroup]="signupForm" autocomplete="off" (ngSubmit)="register()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>Por favor ingrese sus datos</mat-card-subtitle>
+    </mat-card-header>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-icon matSuffix>login</mat-icon>
+        <mat-label>Email</mat-label>
+        <input type="email" formControlName="email" matInput placeholder="Ej. correo@correo.com">
+        <mat-hint>Ingrese su correo electronico</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-icon matSuffix>password</mat-icon>
+        <mat-label>Password</mat-label>
+        <input type="password" formControlName="password" matInput>
+        <mat-hint>Ingrese su contraseña</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <span class="register">Ya tiene una cuenta?
+      <a routerLink="/auth/login">Login</a></span>
+
+    <button [disabled]="signupForm.invalid" type="submit" mat-raised-button color="primary">Enviar</button>
+  </mat-card>
+</form>

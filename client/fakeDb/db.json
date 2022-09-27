@@ -1,0 +1,10 @@
+{
+  "usersList": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "correo@correo.com",
+      "password": "123456"
+    }
+  ]
+}
