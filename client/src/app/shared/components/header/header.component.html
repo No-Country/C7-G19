@@ -1,1 +1,36 @@
-<p>header works!</p>
+<mat-toolbar class="header">
+
+    <div class="header-logo">
+        <a [routerLink]="['/home']">App</a>
+    </div>
+
+    <div class="header-navigation">
+        <ul class="navigation-items">
+            <li>
+                <a [routerLink]="['/home']">Home</a>
+            </li>
+            <li>
+                <a [routerLink]="['#']">Menu</a>
+            </li>
+            <li>
+                <a [routerLink]="['#']">Service</a>
+            </li>
+            <li>
+                <a [routerLink]="['#']">Discover</a>
+            </li>
+            <li>
+                <a [routerLink]="['#']">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="header-auth">
+        <div>
+            <a [routerLink]="['/auth']">Login</a>
+        </div>
+        <div>
+            <a [routerLink]="['/auth/signup']">Register</a>
+        </div>
+    </div>
+
+</mat-toolbar>
