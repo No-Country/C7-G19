@@ -1,5 +1,8 @@
 const mysql = require('mysql');
+const { promisify } = require('util') 
 require('dotenv').config();
+
+
 const { MYSQL_HOST, MYSQL_PORT, MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD } = process.env
 
 const db = mysql.createConnection({
@@ -15,3 +18,8 @@ db.connect((err) => {
         console.log("err", err)
     } console.log('DB connected')
 })
+
+promisify(db.query)
+
+module.exports = db;
+
