@@ -1,0 +1,58 @@
+$color-primary: #7A1420
+$color-secundary: #A33643
+$color-terciary: #F5A3AD
+$color-light: #F5A3AD
+$color-dark: #52000A
+
+.header
+    background: hsla(324, 82%, 11%, 1)
+    background: linear-gradient(90deg, hsla(324, 82%, 11%, 1) 0%, hsla(343, 74%, 31%, 1) 80%)
+    color: white
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    padding: 2.5rem 1.5rem
+
+    a
+        text-decoration: none
+        color: white
+    li
+        list-style: none
+
+    .header-logo
+        display: flex
+        align-items: center
+        mat-icon 
+            margin-right: 1rem
+            transform: rotate(180deg) scale(2)
+        h1
+            margin: 0
+        a
+            display: flex
+        
+    .header-navigation
+        display: flex
+        
+        .navigation-items
+            display: flex
+            flex-direction: row
+
+            gap: 25px
+
+    .header-auth
+        display: flex
+        align-items: center
+
+        /* Momentaneo*/
+        width: 15%
+        justify-content: space-evenly
+
+
+        div:first-child
+            button
+                background: transparent
+                color: white
+            
+            
