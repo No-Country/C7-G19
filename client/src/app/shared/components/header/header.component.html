@@ -1,7 +1,10 @@
 <mat-toolbar class="header">
 
     <div class="header-logo">
-        <a [routerLink]="['/home']">App</a>
+        <a [routerLink]="['/home']"> 
+            <mat-icon>style</mat-icon>
+            <h1>App</h1>
+        </a>
     </div>
 
     <div class="header-navigation">
@@ -26,11 +29,21 @@
 
     <div class="header-auth">
         <div>
-            <a [routerLink]="['/auth']">Login</a>
+            <a [routerLink]="['/auth']" >
+                <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base" (click)="onLogin()" >
+                    <span class="mat-button-wrapper">Login</span>
+                </button>
+            </a>
         </div>
         <div>
-            <a [routerLink]="['/auth/signup']">Register</a>
+            <a [routerLink]="['/auth/signup']" >
+                <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base" (click)="onLogout()" >
+                    <span class="mat-button-wrapper">Sign Up</span>
+                </button>
+            </a>
         </div>
     </div>
 
 </mat-toolbar>
+
+

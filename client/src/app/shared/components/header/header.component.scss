@@ -1,0 +1,43 @@
+.header {
+  background: hsla(324, 82%, 11%, 1);
+  background: linear-gradient(
+    90deg,
+    hsla(324, 82%, 11%, 1) 0%,
+    hsla(343, 74%, 31%, 1) 80%
+  );
+  color: #fff;
+  .container {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  mat-icon {
+    margin-right: 1rem;
+    transform: rotate(180deg) scale(2);
+  }
+  h1 {
+    margin: 0;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  button {
+    margin-left: 1rem;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 500;
+    border: 3px solid #fdba18;
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+  }
+}
