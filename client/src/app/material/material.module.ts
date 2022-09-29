@@ -21,6 +21,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [],
@@ -47,6 +49,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatDialogModule,
     MatFormFieldModule,
     MatChipsModule,
+    MatCheckboxModule,
+    MatSliderModule,
   ],
   exports: [
     MatButtonModule,
@@ -70,6 +74,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatDialogModule,
     MatFormFieldModule,
     MatChipsModule,
+    MatCheckboxModule,
+    MatSliderModule,
   ],
 })
 export class MaterialModule {}

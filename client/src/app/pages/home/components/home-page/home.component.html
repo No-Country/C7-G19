@@ -1,1 +1,43 @@
-<p>home works!</p>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side">
+    <h3>Filtrar por:</h3>
+    <h4>Ubicacion </h4>
+    <span>* aqui se mostraran ciudades <br>dinamicamente</span>
+    <!-- checkboxs -->
+    <mat-checkbox>Chile</mat-checkbox>
+    <mat-checkbox>Argentina</mat-checkbox>
+    <mat-checkbox>Peru</mat-checkbox>
+    <mat-checkbox>Colombia</mat-checkbox>
+    <mat-checkbox>Brasil</mat-checkbox>
+    <mat-checkbox>Uruguay</mat-checkbox>
+    <h4>Tipo de Venta</h4>
+    <mat-checkbox>Venta</mat-checkbox>
+    <mat-checkbox>Trueque</mat-checkbox>
+    <h4>Rango de Precio</h4>
+    <mat-slider min="0" max="100000" step="1000" value="0"></mat-slider>
+    <h4>Fecha de Publicacion</h4>
+    <mat-checkbox value="1">Hoy</mat-checkbox>
+    <mat-checkbox value="2">Esta Semana</mat-checkbox>
+    <mat-checkbox value="3">Este Mes</mat-checkbox>
+    <h4>Mas filtros proximamente...</h4>
+
+
+
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <p>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" [formControl]="term" (input)="keyUp()" (keyup.enter)="searchStickers()"
+          placeholder="Ingrese el nombre de la figurita a buscar...">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="button" (click)="drawer.toggle()">Filtrar Busqueda</button>
+    </p>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<!-- <div class="grill" *ngIf="search && !term.invalid">
+  <div *ngFor="let item of search">
+  </div>
+</div> -->
