@@ -1,0 +1,10 @@
+@import "../node_modules/@angular/material/theming";
+@include mat-core();
+
+$my-primary: mat-palette($mat-pink, 700);
+$my-accent: mat-palette($mat-light-green, 400);
+$my-warn: mat-palette($mat-purple, 500);
+
+$my-theme: mat-light-theme($my-primary, $my-accent);
+
+@include angular-material-theme($my-theme)
