@@ -6,6 +6,7 @@ const router = Router();
 
 router.post("/", async function( req, res) {
     const {
+        id,
         name,
         lastName,
         mail,
@@ -17,13 +18,14 @@ router.post("/", async function( req, res) {
 
     try {
         const userCreated = {
-                mail: mail,
-                name: name,
-                lastName: lastName,
-                phone: phone,
-                password: passwordHash,
-                ubication: ubication
-            }
+            id: id,
+            mail: mail,
+            name: name,
+            lastName: lastName,
+            phone: phone,
+            password: passwordHash,
+            ubication: ubication
+        }
 
         await db.query('INSERT INTO user set ?', [userCreated])
 

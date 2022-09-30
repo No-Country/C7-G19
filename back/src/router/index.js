@@ -1,8 +1,8 @@
 const { Router } = require('express');
 
             // User
-// const userGet = require("./User/user_Get")
-const userPost = require("./User/user_Post")
+const userGet = require("./user/user_Get")
+const userPost = require("./user/user_Post")
 
             // Figus
 
@@ -10,7 +10,7 @@ const userPost = require("./User/user_Post")
 const router = Router();
 
             // User
-// router.use('/users', userGet);
+router.use('/users', userGet);
 router.use('/createUser', userPost);
 
             // Figus
