@@ -1,19 +1,18 @@
-// const { Router } = require("express");
-// const db = require("../../db")
+const { Router } = require("express");
+const User = require("../../models/User")
 
-// const router = Router();
+const router = Router();
 
-// router.get("/",  function( req, res) {
+router.get("/", async function( req, res) {
 
-//     try{
-//         const user = db.query('SELECT * FROM user');
-//         console.log(user)
-//         res.send('okey')
+    try{
+        const users = await User.findOne({});
+        res.json(users);
 
-//     } catch (err) {
-//         console.log(err)
-//         res.send(err);
-//     }
-// });
+    } catch (err) {
+        console.log(err)
+        res.send(err);
+    }
+});
 
-// module.exports = router;
+module.exports = router;

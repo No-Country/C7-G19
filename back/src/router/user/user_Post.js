@@ -1,40 +1,36 @@
-// const { Router } = require("express");
-// const bcryptjs = require("bcryptjs");
-// const db = require("../../db")
+const { Router } = require("express");
+const User = require("../../models/User");
+const bcryptjs = require("bcryptjs");
 
-// const router = Router();
+const router = Router();
 
-// router.post("/", async function( req, res) {
-//     const {
-//         id,
-//         name,
-//         lastName,
-//         mail,
-//         password,
-//         phone,
-//         ubication  } = req.body;
+router.post("/", async function( req, res) {
+    const {
+        name,
+        lastName,
+        mail,
+        password,
+        phone,
+        location } = req.body;
 
-//     let passwordHash = await bcryptjs.hash(password, 8);
+    let passwordHash = await bcryptjs.hash(password, 8);
 
-//     try {
-//         const userCreated = {
-//             id: id,
-//             mail: mail,
-//             name: name,
-//             lastName: lastName,
-//             phone: phone,
-//             password: passwordHash,
-//             ubication: ubication
-//         }
+    try {
+        const userCreated = await User.create({
+                mail: mail,
+                name: name,
+                lastName: lastName,
+                phone: phone,
+                password: passwordHash,
+                location: location,
+            })
+        res.json(userCreated);
+        console.log("user", userCreated) 
 
-//         await db.query('INSERT INTO user set ?', [userCreated])
+    } catch (err) {
+        console.log(err)
+        res.json(err);
+    }
+});
 
-//         res.send("usuario creado");
-
-//     } catch (err) {
-//         console.log(err)
-//         res.json(err);
-//     }
-// });
-
-// module.exports = router;
+module.exports = router;

@@ -6,7 +6,6 @@ module.exports = (sequelize) => {
       type : DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
-      allowNull : false
     },
     name : {
       type : DataTypes.STRING,
@@ -34,7 +33,6 @@ module.exports = (sequelize) => {
     status: {
         type: DataTypes.ENUM("active", "removed"),
         defaultValue: "active",
-        allowNull: false,
       },
   });
 };

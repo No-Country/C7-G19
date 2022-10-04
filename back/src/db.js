@@ -1,9 +1,8 @@
+require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
-
-require('dotenv').config();
 
 const sequelize = new Sequelize(`postgres://postgres:martina@localhost:5432/C719noCountry`, {
   logging: false, // set to console.log to see the raw SQL queries
@@ -29,7 +28,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { user, figuritas } = sequelize.models;
+const { User, Figuritas } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
