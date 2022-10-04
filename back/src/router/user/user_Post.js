@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const User = require("../../models/User");
+const {User} = require("../../db");
 const bcryptjs = require("bcryptjs");
 
 const router = Router();
@@ -24,6 +24,7 @@ router.post("/", async function( req, res) {
                 password: passwordHash,
                 location: location,
             })
+
         res.json(userCreated);
         console.log("user", userCreated) 
 

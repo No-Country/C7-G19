@@ -1,10 +1,9 @@
 const { Router } = require("express");
-const User = require("../../models/User")
+const {User} = require("../../db");
 
 const router = Router();
 
 router.get("/", async function( req, res) {
-
     try{
         const users = await User.findOne({});
         res.json(users);

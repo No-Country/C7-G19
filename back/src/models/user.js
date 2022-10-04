@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-    sequelize.define('user', {
-    id : {
+	sequelize.define('user', {
+		id : {
       type : DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
@@ -34,5 +34,6 @@ module.exports = (sequelize) => {
         type: DataTypes.ENUM("active", "removed"),
         defaultValue: "active",
       },
-  });
+	});
 };
+

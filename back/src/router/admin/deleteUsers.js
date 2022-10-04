@@ -1,23 +1,27 @@
-// const { Router } = require("express");
-// const db = require("../../db")
+const { Router } = require("express");
+const {User} = require("../../db");
 
-// const router = Router();
+const router = Router();
 
-// router.post("/", async (req, res) => {
-//   const { id} = req.body;
+router.post("/", async (req, res) => {
+  const {id} = req.body;
 
-//   try {
-//     const user = await db.query('SELECT * FROM user WHERE id= ?', [id])
+  try {
+    const user = await User.findOne({
+        where: {
+          id: id,
+        },
+      });
 
-//     if (user) {
-//       user.status = "removed"
-//       await user.save() 
-//       return res.send("Usuario eliminado")
+    if (user) {
+      user.status = "removed"
+      await user.save() 
+      return res.send("Usuario eliminado")
       
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
 
-// module.exports = router;
+module.exports = router;
