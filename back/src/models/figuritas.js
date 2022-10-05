@@ -2,18 +2,12 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
     sequelize.define('figurita', {
-    id : {
-      type : DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull : false
-    },
     name : {
       type : DataTypes.STRING,
       allowNull : false
     },
-    lastName : {
+    lastname : {
         type : DataTypes.STRING,
-        allowNull : false
       },
     img : {
       type : DataTypes.STRING,
@@ -25,7 +19,6 @@ module.exports = (sequelize) => {
     },
     position : {
       type : DataTypes.STRING,
-      allowNull : false
     },
   },
   { timestamps: false }
