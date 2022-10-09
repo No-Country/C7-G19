@@ -16,10 +16,7 @@ module.exports = (sequelize) => {
     team : {
       type : DataTypes.STRING,
       allowNull : false
-    },
-    position : {
-      type : DataTypes.STRING,
-    },
+    }
   },
   { timestamps: false }
   );
