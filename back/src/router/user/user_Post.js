@@ -26,7 +26,6 @@ router.post("/", async function( req, res) {
             })
 
         res.json(userCreated);
-        console.log("user", userCreated) 
 
     } catch (err) {
         console.log(err)

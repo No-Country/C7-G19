@@ -3,7 +3,7 @@ const {User} = require("../../db");
 
 const router = Router();
 
-router.post("/", async (req, res) => {
+router.put("/", async (req, res) => {
   const {id} = req.body;
 
   try {

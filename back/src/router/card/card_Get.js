@@ -1,14 +1,14 @@
 const { Router } = require("express");
-const {User, Card} = require("../../db");
+const {Card, Figuritas} = require("../../db");
 
 const router = Router();
 
 router.get("/", async function( req, res) {
     try{
-        const users = await User.findOne({
-            include: Card
+        const cards = await Card.findOne({
+            include: Figuritas,
         });
-        res.json(users);
+        res.json(cards);
 
     } catch (err) {
         console.log(err)
