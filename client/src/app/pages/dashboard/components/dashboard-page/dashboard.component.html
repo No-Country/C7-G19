@@ -1,0 +1,25 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" class="col-2" opened>
+    <mat-nav-list class="mt-4">
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active">
+        <mat-icon matListIcon>dashboard</mat-icon>
+        <span matLine>Dashboard</span>
+      </a>
+      <a mat-list-item routerLink="sell" routerLinkActive="active">
+        <mat-icon matListIcon>shopping_cart</mat-icon>
+        <span matLine>Vender</span>
+      </a>
+      <a mat-list-item routerLink="messages" routerLinkActive="active">
+        <mat-icon matListIcon>receipt</mat-icon>
+        <span matLine>Mensajes</span>
+      </a>
+      <a mat-list-item routerLink="account" routerLinkActive="active">
+        <mat-icon matListIcon>people</mat-icon>
+        <span matLine>Mi cuenta</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

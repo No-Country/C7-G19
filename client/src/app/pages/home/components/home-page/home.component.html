@@ -1,4 +1,23 @@
 <mat-drawer-container>
+  <mat-drawer-content class="px-5">
+    <p>
+      <mat-form-field appearance="outline">
+        <input matInput type="text" [formControl]="term" (input)="keyUp()" (keyup.enter)="searchStickers()"
+          placeholder="Ingrese el nombre de la figurita a buscar..." autocomplete="off">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="button" (click)="drawer.toggle()">Filtrar Busqueda</button>
+    </p>
+    <app-products></app-products>
+  </mat-drawer-content>
+
+  <!-- <div class="grill" *ngIf="search && !term.invalid">
+    <div *ngFor="let item of search">
+    </div>
+  </div> -->
+
+
+
   <mat-drawer #drawer mode="side">
     <h3>Filtrar por:</h3>
     <h4>Ubicacion </h4>
@@ -21,24 +40,6 @@
     <mat-checkbox value="2">Esta Semana</mat-checkbox>
     <mat-checkbox value="3">Este Mes</mat-checkbox>
     <h4>Mas filtros proximamente...</h4>
-
-
-
   </mat-drawer>
 
-  <mat-drawer-content>
-    <p>
-      <mat-form-field appearance="outline">
-        <input matInput type="text" [formControl]="term" (input)="keyUp()" (keyup.enter)="searchStickers()"
-          placeholder="Ingrese el nombre de la figurita a buscar...">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
-      <button mat-raised-button color="primary" type="button" (click)="drawer.toggle()">Filtrar Busqueda</button>
-    </p>
-  </mat-drawer-content>
 </mat-drawer-container>
-
-<!-- <div class="grill" *ngIf="search && !term.invalid">
-  <div *ngFor="let item of search">
-  </div>
-</div> -->

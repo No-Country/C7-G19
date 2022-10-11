@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { OffertsService } from '../../../../core/services/offerts/offerts.service';
 
 @Component({
   selector: 'app-home',
@@ -19,12 +20,12 @@ export class HomeComponent implements OnInit {
     return value;
   }
 
-  constructor() {}
+  constructor(private offertsService: OffertsService) {}
 
   ngOnInit(): void {}
 
   searchStickers(): void {
-    console.log(this.term.value);
+    this.offertsService.searchOfferts(this.term.value!);
   }
 
   keyUp() {

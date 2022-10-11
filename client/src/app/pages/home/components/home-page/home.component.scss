@@ -1,9 +1,12 @@
+:host {
+  overflow-x: hidden;
+}
 p {
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: auto;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   mat-form-field {
     display: block;
@@ -33,7 +36,6 @@ mat-drawer-container {
   margin: 0;
   height: 85vh;
   width: 100%;
-  margin-top: -1rem;
   padding-bottom: 2rem;
 }
 

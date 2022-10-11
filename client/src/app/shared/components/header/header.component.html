@@ -1,49 +1,46 @@
-<mat-toolbar class="header">
+<div class="header">
+  <div class="container">
+    <a class="logo" [routerLink]="['/home']">
+      <mat-icon>style</mat-icon>
+      <h1>App</h1>
+    </a>
 
-    <div class="header-logo">
-        <a [routerLink]="['/home']"> 
-            <mat-icon>style</mat-icon>
-            <h1>App</h1>
-        </a>
-    </div>
-
-    <div class="header-navigation">
-        <ul class="navigation-items">
-            <li>
-                <a [routerLink]="['/home']">Home</a>
-            </li>
-            <li>
-                <a [routerLink]="['#']">Menu</a>
-            </li>
-            <li>
-                <a [routerLink]="['#']">Service</a>
-            </li>
-            <li>
-                <a [routerLink]="['#']">Discover</a>
-            </li>
-            <li>
-                <a [routerLink]="['#']">Contact</a>
-            </li>
-        </ul>
-    </div>
+    <!-- <div class="header-navigation">
+      <ul class="navigation-items">
+        <li>
+          <a [routerLink]="['/home']">Home</a>
+        </li>
+        <li>
+          <a [routerLink]="['#']">Menu</a>
+        </li>
+        <li>
+          <a [routerLink]="['#']">Service</a>
+        </li>
+        <li>
+          <a [routerLink]="['#']">Discover</a>
+        </li>
+        <li>
+          <a [routerLink]="['#']">Contact</a>
+        </li>
+      </ul>
+    </div> -->
 
     <div class="header-auth">
-        <div>
-            <a [routerLink]="['/auth']" >
-                <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base" (click)="onLogin()" >
-                    <span class="mat-button-wrapper">Login</span>
-                </button>
-            </a>
-        </div>
-        <div>
-            <a [routerLink]="['/auth/signup']" >
-                <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base" (click)="onLogout()" >
-                    <span class="mat-button-wrapper">Sign Up</span>
-                </button>
-            </a>
-        </div>
+      <div>
+        <a [routerLink]="['/auth']">
+          <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base" (click)="onLogin()">
+            <span class="mat-button-wrapper">Login</span>
+          </button>
+        </a>
+      </div>
+      <div>
+        <a [routerLink]="['/auth/signup']">
+          <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base" (click)="onLogout()">
+            <span class="mat-button-wrapper">Sign Up</span>
+          </button>
+        </a>
+      </div>
     </div>
 
-</mat-toolbar>
-
-
+  </div>
+</div>

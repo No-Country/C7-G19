@@ -1,48 +1,55 @@
 <form action="" [formGroup]="myForm" autocomplete="off" (ngSubmit)="login()" class="login-form">
-	<mat-card class="login">
-		<mat-card-header >
-			<mat-card-title>Sign in to Account</mat-card-title>
-			<mat-card-subtitle class="socials">
-				<mat-icon>facebook</mat-icon>
-				<mat-icon>facebook</mat-icon>
-				<mat-icon>facebook</mat-icon>
-			</mat-card-subtitle>
-			<mat-card-subtitle class="description">or use your email account</mat-card-subtitle>
-		</mat-card-header>
-	
-		<p>
-			<mat-form-field appearance="fill">
-				<mat-icon matSuffix>login</mat-icon>
-				<mat-label>Email</mat-label>
-				<input type="email" formControlName="email" matInput placeholder="Ej. correo@correo.com">
-			</mat-form-field>
-		</p>
-	
-		<p>
-			<mat-form-field appearance="fill">
-				<mat-icon matSuffix>password</mat-icon>
-				<mat-label>Password</mat-label>
-				<input type="password" formControlName="password" matInput>
-			</mat-form-field>
-		</p>
-	
-		<div>
-			<input type="checkbox">Remember me
-	
-			<a routerLink="/auth/forgot-password">
-				<span>Forgot Password?</span>
-			</a>
-		</div>
-	
-		<div>
-			<button [disabled]="myForm.invalid" type="submit" mat-raised-button color="primary">Enviar</button>
-		</div>
-	</mat-card>
+  <mat-card class="login">
+    <mat-card-header>
+      <mat-card-title>Ingrese a su cuenta.</mat-card-title>
+      <mat-card-subtitle class="socials">
+        <mat-icon>facebook</mat-icon>
+        <mat-icon>facebook</mat-icon>
+        <mat-icon>facebook</mat-icon>
+      </mat-card-subtitle>
+      <mat-card-subtitle class="description">o use su correo electronico</mat-card-subtitle>
+    </mat-card-header>
 
-	<div class="signup">
-		<div><mat-card-title>Hello, me friend!</mat-card-title></div>
-		<div><mat-card-subtitle >Start journey with us.</mat-card-subtitle></div>
-		<button mat-raised-button routerLink="/auth/signup">Sign Up</button>
-	</div>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-icon matSuffix>login</mat-icon>
+        <mat-label>Email</mat-label>
+        <input type="email" formControlName="email" matInput placeholder="Ej. correo@correo.com">
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-icon matSuffix>password</mat-icon>
+        <mat-label>Password</mat-label>
+        <input type="password" formControlName="password" matInput>
+      </mat-form-field>
+    </p>
+
+    <div class="textito">
+      <div class="">
+        <input type="checkbox">Recuerdame
+      </div>
+
+      <a routerLink="/auth/forgot-password">
+        <span>Olvido su contraseña?</span>
+      </a>
+    </div>
+
+    <div>
+      <button class="login-button" [disabled]="myForm.invalid" type="submit" mat-raised-button
+        color="primary">Enviar</button>
+    </div>
+  </mat-card>
+
+  <div class="signup">
+    <div>
+      <mat-card-title>Todavia no tiene cuenta?</mat-card-title>
+    </div>
+    <div>
+      <mat-card-subtitle>Creese una aqui.</mat-card-subtitle>
+    </div>
+    <button mat-raised-button routerLink="/auth/signup">Unirse</button>
+  </div>
 
 </form>

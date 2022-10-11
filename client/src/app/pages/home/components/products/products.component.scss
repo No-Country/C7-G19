@@ -1,0 +1,15 @@
+:host {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 0 2rem 0 2rem;
+}
+
+.cards {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: first baseline;
+  text-align: center;
+}

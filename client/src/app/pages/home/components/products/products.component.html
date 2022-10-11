@@ -1,0 +1,5 @@
+<div class="cards">
+  <h2 *ngIf="items.length == 0"> La lista esta vacia. </h2>
+  <app-product *ngFor="let item of items; index as i" (AddToCartEvent)="readEvent($event)" [offert]="item">
+  </app-product>
+</div>

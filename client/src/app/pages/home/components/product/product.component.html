@@ -1,0 +1,7 @@
+<div class="card" [routerLink]="['/offerts', offert.id]">
+  <img [src]="offert.product.img" alt="offert image">
+  <h2 appHighlight>{{offert.title }}</h2>
+  <p>{{offert.description}}</p>
+  <h3 class="price">{{offert.price | currency }} </h3>
+  <div class="btns">
+  </div>

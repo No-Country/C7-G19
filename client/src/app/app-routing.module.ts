@@ -20,6 +20,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'offerts/:id',
+    loadChildren: () =>
+      import('./pages/offerts/offerts.module').then((m) => m.OffertsModule),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',

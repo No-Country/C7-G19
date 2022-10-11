@@ -19,6 +19,8 @@
 .logo {
   display: flex;
   align-items: center;
+  color: #fff;
+  text-decoration: none;
   mat-icon {
     margin-right: 1rem;
     transform: rotate(180deg) scale(2);
@@ -28,7 +30,7 @@
   }
 }
 
-.buttons {
+.header-auth {
   display: flex;
   align-items: center;
   button {
@@ -37,7 +39,7 @@
     color: #fff;
     font-weight: 500;
     border: 3px solid #fdba18;
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
     border-radius: 7px;
   }
 }
