@@ -14,6 +14,7 @@ Qatarsys es un e-commerce  que busca solucionar el problema de escasez de figuri
 - Angular.
 - SCSS.
 - Typescript
+- HTML.
 
 
 ## Integrante
