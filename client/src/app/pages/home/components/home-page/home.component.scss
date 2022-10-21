@@ -15,10 +15,12 @@ p {
     min-width: none;
   }
   button {
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 1rem;
+    display: flex;
+    margin: 0;
+    margin-bottom: 1.2rem;
     margin-left: 1rem;
+    padding: 0.5rem 1.7rem;
+    font-size: 1rem;
   }
 }
 
@@ -34,9 +36,10 @@ p {
 
 mat-drawer-container {
   margin: 0;
-  height: 85vh;
+  height: 86vh;
   width: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 0rem;
+  background-color: #fafafa;
 }
 
 mat-drawer {

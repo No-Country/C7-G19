@@ -1,5 +1,5 @@
 export interface ISticker {
-  id: number;
+  id: string;
   name: string;
   surname: string;
   img: string;

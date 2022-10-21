@@ -3,7 +3,7 @@
 }
 
 .wrapper {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 45px);
 }
 
 .container {
@@ -15,7 +15,7 @@
   position: sticky;
   bottom: 0;
   width: 100%;
-  z-index: 50;
+  z-index: 5000;
 }
 
 @media (max-width: 1300px) {

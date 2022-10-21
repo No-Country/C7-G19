@@ -1,7 +1,46 @@
-.mat-stepper-horizontal {
-  margin-top: 8px;
+mat-card {
+  margin: 0 0 20px 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
 }
 
 .mat-form-field {
   margin-top: 16px;
+  padding: 1rem;
+}
+
+.noimage {
+  width: 18rem;
+  height: 24rem;
+  border: 5px dashed #ccc;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-uploader__preview img {
+  max-width: 18rem;
+  max-height: 25rem;
+}
+
+.image-uploader {
+  margin-bottom: 16px;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.flex {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5rem;
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+  }
 }

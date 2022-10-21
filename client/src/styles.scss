@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+// import Montserrat font
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
 html,
 body {
@@ -7,7 +9,8 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
   overflow-y: hidden;
   min-height: 100%;
+  background: #e1e1e1;
 }

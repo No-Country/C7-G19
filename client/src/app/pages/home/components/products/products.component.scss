@@ -2,7 +2,9 @@
   display: block;
   margin: 0 auto;
   border: 1px solid #ccc;
-  padding: 0 2rem 0 2rem;
+  border-radius: 5px;
+  padding: 0 auto;
+  margin-bottom: 3rem;
 }
 
 .cards {
@@ -10,6 +12,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: first baseline;
+  justify-content: center;
   text-align: center;
 }

@@ -1,28 +1,24 @@
-<form action="" [formGroup]="myForm" autocomplete="off" (ngSubmit)="login()" class="login-form">
+<form [formGroup]="myForm" autocomplete="off" (ngSubmit)="login()" class="login-form">
   <mat-card class="login">
-    <mat-card-header>
-      <mat-card-title>Ingrese a su cuenta.</mat-card-title>
-      <mat-card-subtitle class="socials">
-        <mat-icon>facebook</mat-icon>
-        <mat-icon>facebook</mat-icon>
-        <mat-icon>facebook</mat-icon>
-      </mat-card-subtitle>
-      <mat-card-subtitle class="description">o use su correo electronico</mat-card-subtitle>
+    <mat-card-header class="mb-3">
+      <mat-card-title class="mt-5 fs-4">Ingrese a su cuenta.</mat-card-title>
+
     </mat-card-header>
 
     <p>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="px-10 fs-6">
         <mat-icon matSuffix>login</mat-icon>
         <mat-label>Email</mat-label>
-        <input type="email" formControlName="email" matInput placeholder="Ej. correo@correo.com">
+        <input [formControlName]="'email'" type="email" formControlName="email" matInput
+          placeholder="Ej. correo@correo.com">
       </mat-form-field>
     </p>
 
     <p>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="fill" class="fs-6">
         <mat-icon matSuffix>password</mat-icon>
         <mat-label>Password</mat-label>
-        <input type="password" formControlName="password" matInput>
+        <input type="password" formControlName="password" [formControlName]="'password'" matInput>
       </mat-form-field>
     </p>
 

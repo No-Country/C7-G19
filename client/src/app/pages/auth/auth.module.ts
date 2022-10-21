@@ -8,6 +8,7 @@ import { SingupPageComponent } from './pages/singup-page/singup-page.component';
 import { MaterialModule } from '../../material/material.module';
 import { SingupFormComponent } from './components/singup-form/singup-form.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,11 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     SingupFormComponent,
     ForgotPasswordComponent,
   ],
-  imports: [CommonModule, LoginRoutingModule, MaterialModule],
+  imports: [
+    CommonModule,
+    LoginRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
 })
 export class AuthModule {}

@@ -1,0 +1,49 @@
+:host {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.hero {
+  background: hsla(324, 82%, 11%, 1);
+  background: linear-gradient(
+    90deg,
+    hsla(324, 82%, 11%, 1) 0%,
+    hsla(343, 74%, 31%, 1) 80%
+  );
+  color: #fff;
+  padding: 2rem 0;
+  padding-top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  z-index: 500;
+  .text {
+    width: 60%;
+    padding-right: 5rem;
+    padding-bottom: 5rem;
+    h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 3rem;
+    }
+
+    button {
+      background: #fdba18;
+      color: hsla(324, 82%, 11%, 1);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+.hero2 {
+  background-color: #e1e1e1;
+}

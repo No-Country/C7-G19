@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from 'src/app/models/user.interface';
 import { map, shareReplay } from 'rxjs';
+import { Router } from '@angular/router';
+import { users } from 'src/app/db/users';
 
 @Injectable({
   providedIn: 'root',
@@ -9,30 +11,12 @@ import { map, shareReplay } from 'rxjs';
 export class AuthService {
   private loginUrl = 'http://localhost:3001/';
   private _user!: IUser;
+  token$ = localStorage.getItem('token') ? true : false;
 
-  dummyUsers: IUser[] = [
-    {
-      id: 1,
-      name: 'Alpha',
-      password: '123',
-      email: 'correo1@correo.com',
-    },
-    {
-      id: 2,
-      name: 'Bravo',
-      password: '123',
-      email: 'correo2@correo.com',
-    },
-    {
-      id: 3,
-      name: 'Charlie',
-      password: '123',
-      email: 'correo3@correo.com',
-    },
-  ];
+  dummyUsers: IUser[] = users;
   dummyToken: string = '1234567890';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   //user login
   // login(email: string, password: string) {
@@ -58,6 +42,9 @@ export class AuthService {
     if (user) {
       this._user = user;
       localStorage.setItem('token', this.dummyToken);
+      this.router.navigate(['dashboard']);
+    } else {
+      console.log('User not found');
     }
   }
 
@@ -65,5 +52,9 @@ export class AuthService {
   logout() {
     this._user = undefined!;
     localStorage.removeItem('token');
+  }
+
+  isloggedIn() {
+    return localStorage.getItem('token') ? true : false;
   }
 }

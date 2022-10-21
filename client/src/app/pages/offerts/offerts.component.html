@@ -1,1 +1,142 @@
-<h1>offerts works!</h1>
+<mat-drawer-container class="example-container">
+  <div *ngIf="!offert; else divOffert" class="alert alert-danger">
+    Parece haber un error...
+  </div>
+
+  <ng-template #divOffert id="divOffert">
+    <!-- volver al buscador button -->
+    <div class="row flechita">
+      <div class="col-12">
+        <button mat-button (click)="volver()">
+          <mat-icon>
+            arrow_back_ios_new
+          </mat-icon>
+          Volver al buscador
+        </button>
+      </div>
+    </div>
+
+    <div *ngIf="offert" class="container">
+      <div class="main">
+        <div class="photo">
+          <img [src]="offert.product.img" alt="image">
+        </div>
+
+
+        <div class="card">
+          <div class="card-body">
+            <h2 class="fs-2">{{offert.title}} </h2>
+            <mat-divider class="p-2"></mat-divider>
+
+            <p *ngIf="offert.sell" class="card-price"> {{offert.price | currency}}</p>
+            <div *ngIf="offert.exchange">
+              <h3 class="fs-3 pt-3">INTERCAMBIO</h3>
+              <p class="fs-4 py-2">Consulte condiciones en la descripción.</p>
+            </div>
+
+            <mat-divider class="p-2"></mat-divider>
+
+            <table>
+              <tbody>
+                <tr>
+                  <td>ID Panini</td>
+                  <td>{{offert.product.id}}</td>
+                </tr>
+                <tr>
+                  <td>Nombre:</td>
+                  <td>{{offert.product.name}} {{offert.product.surname}} </td>
+                </tr>
+                <tr>
+                  <td>Selección</td>
+                  <td>{{offert.product.team}} </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="seller my-2">
+              <mat-divider class="p-2"></mat-divider>
+
+              <p class="card-text fs-5">Vendedor: {{offert.user.nickname}}</p>
+              <!-- reputation seller stars material -->
+              <div class="d-flex location mx-0">
+                <mat-icon color="primary" class="ml-0">place</mat-icon>
+                <p class="fs-6">{{offert.user.city}},{{offert.user.state}} </p>
+              </div>
+              <mat-divider class="py-1"></mat-divider>
+
+              <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                  <mat-icon class="text-warning">star</mat-icon>
+                  <mat-icon class="text-warning">star</mat-icon>
+                  <mat-icon class="text-warning">star</mat-icon>
+                  <mat-icon class="text-warning">star</mat-icon>
+                  <mat-icon class="text-warning">star</mat-icon>
+                </div>
+                <div class="d-flex">
+                  <p class="card-text">Reputación: 5</p>
+                </div>
+              </div>
+            </div>
+            <mat-divider class="p-1"></mat-divider>
+
+            <h5 class="fs-5 lh-base">Descripción: {{offert.description}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="messages">
+        <!-- send commentaries to the seller -->
+
+        <div class="card m-5">
+          <div class="card-body">
+            <!-- block layer if no token -->
+            <div *ngIf="!token" class="alert alert-info" class="iftoken">
+              <p class="fs-4 pb-2">Para enviar un mensaje al vendedor, debe iniciar sesión.</p>
+              <a routerLink="/auth/login" mat-raised-button color="primary">Iniciar sesión</a>
+            </div>
+
+            <h5 class="card-title fs-5">Contactar al vendedor</h5>
+            <mat-divider class="p-2"></mat-divider>
+
+            <form [formGroup]="form" (ngSubmit)="sendComment()">
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Escribí tu consulta</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  formControlName="comment"></textarea>
+              </div>
+              <button type="submit" mat-raised-button color="primary">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- app-product carrousel -->
+      <!-- otras ofertas -->
+      <h5 class="card-title fs-4 mx-5">Otras ofertas que te podrian interesar:</h5>
+      <mat-divider class="p-2 mx-5"></mat-divider>
+
+
+
+      <p-carousel [value]="items" [numVisible]="4" [autoplayInterval]="3000" [circular]="true">
+        <ng-template pTemplate="item" let-item>
+          <div class="card-carousel" (click)="gotocard(item.id)">
+            <img [src]="item.product.img" alt="image">
+            <h2>{{item.title}}</h2>
+            <p>{{item.description}}</p>
+            <h3>{{item.price | currency}}</h3>
+          </div>
+        </ng-template>
+      </p-carousel>
+
+
+
+
+
+    </div>
+
+
+
+
+
+  </ng-template>
+</mat-drawer-container>

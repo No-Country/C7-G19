@@ -1,0 +1,124 @@
+.example-container {
+  height: 85vh;
+  z-index: 500;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  border: 1px solid red;
+  background-color: #fff;
+  margin-top: 0rem;
+  .main {
+    display: flex;
+    .photo {
+      width: 60%;
+      padding: 2rem 5rem;
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .card {
+      width: 40%;
+      margin: 2rem 1rem;
+      padding: 2rem;
+    }
+  }
+}
+
+.card-price {
+  padding: 3rem 0;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+/******************table******************/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  overflow: hidden;
+
+  td,
+  th {
+    border-top: 1px solid #ecf0f1;
+    padding: 10px;
+  }
+
+  td {
+    border-left: 1px solid #ecf0f1;
+    border-right: 1px solid #ecf0f1;
+  }
+  td:nth-child(1) {
+    border-right: 1px solid #4ecdc4;
+    font-weight: 500;
+  }
+
+  th {
+    background-color: #4ecdc4;
+  }
+
+  tr:nth-of-type(odd) td {
+    background-color: lighten(#4ecdc4, 35%);
+  }
+
+  .total {
+    th {
+      background-color: white;
+    }
+
+    td {
+      text-align: right;
+      font-weight: 700;
+    }
+  }
+}
+
+.flechita {
+  max-width: 1250px;
+  margin: 0.5rem auto;
+}
+
+.iftoken {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(51, 5, 33, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-carousel {
+  padding: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 1.5rem;
+  max-width: 16rem;
+  text-align: center;
+
+  img {
+    width: 14rem;
+    height: 18rem;
+    border-radius: 1rem;
+  }
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 0;
+  }
+}

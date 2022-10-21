@@ -21,7 +21,18 @@ export class DashSellComponent implements OnInit {
     secondCtrl: ['', Validators.required],
   });
 
+  imagePreview!: string;
+
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {}
+
+  onImagePicked(event: Event) {
+    const file = (event.target as HTMLInputElement).files![0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imagePreview = reader.result as string;
+    };
+    reader.readAsDataURL(file);
+  }
 }

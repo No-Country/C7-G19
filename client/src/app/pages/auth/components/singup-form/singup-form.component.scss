@@ -26,6 +26,19 @@ mat-card {
   }
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 768px) {
   form {
     padding: 2rem 0;

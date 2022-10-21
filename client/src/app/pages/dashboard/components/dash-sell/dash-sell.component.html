@@ -1,37 +1,73 @@
-<mat-stepper #stepper>
-  <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-      </mat-form-field>
-      <div>
-        <p>Go to a different step to see the error state</p>
-        <button mat-button matStepperNext>Next</button>
+<!-- vender producto formulario falso bootstrap  -->
+<div class="container card">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="card h-100 m-0">
+        <div class="card-header">
+          <h4 class="card-title">Vender Producto</h4>
+        </div>
+        <div class="card-body py-2">
+          <form>
+            <div class="row">
+              <div class="col-md-5 pr-1">
+                <div class="form-group">
+                  <label class="py-2">Titulo</label>
+                  <input type="text" class="form-control" placeholder="Titulo" value="">
+                </div>
+              </div>
+              <div class="col-md-3 px-1">
+                <div class="form-group">
+                  <label class="py-2">Ubicacion</label>
+                  <input type="number" class="form-control" placeholder="Ubicacion" value="">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label class="py-2" for="exampleInputEmail1">Precio</label>
+                  <input type="number" class="form-control" placeholder="Precio" value="">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <label class="py-2">Descripción</label>
+                <!-- textarea -->
+                <div class="form-group">
+                  <textarea class="form-control" rows="3" placeholder="Descripción"></textarea>
+
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label class="py-2">Imagen</label>
+                <div class="image-uploader">
+                  <div class="image-uploader__preview">
+                    <img *ngIf="imagePreview" [src]="imagePreview" alt="Image Preview" />
+                    <p class="noimage" *ngIf="!imagePreview">Por favor suba una imagen <br> del producto a vender
+                    </p>
+                  </div>
+                  <div class="image-uploader__control">
+                    <input type="file" accept="image/*" (change)="onImagePicked($event)" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-info btn-fill pull-right my-2">Vender</button>
+          </form>
+        </div>
       </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Address</mat-label>
-        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl" required>
-      </mat-form-field>
-      <div>
-        <p>Go to a different step to see the error state</p>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
     </div>
-  </mat-step>
-</mat-stepper>
+
+  </div>
+</div>
+
+
+
+
+
+
+<!-- image uploader -->

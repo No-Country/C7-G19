@@ -1,9 +1,9 @@
 <mat-drawer-container>
   <mat-drawer-content class="px-5">
     <p>
-      <mat-form-field appearance="outline">
-        <input matInput type="text" [formControl]="term" (input)="keyUp()" (keyup.enter)="searchStickers()"
-          placeholder="Ingrese el nombre de la figurita a buscar..." autocomplete="off">
+      <mat-form-field appearance="outline" autocomplete="off" (ngSubmit)="search(term)">
+        <input matInput type="text" name="term" [(ngModel)]="term"
+          placeholder="Ingrese el nombre de la figurita a buscar...">
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
       <button mat-raised-button color="primary" type="button" (click)="drawer.toggle()">Filtrar Busqueda</button>
@@ -20,26 +20,32 @@
 
   <mat-drawer #drawer mode="side">
     <h3>Filtrar por:</h3>
-    <h4>Ubicacion </h4>
-    <span>* aqui se mostraran ciudades <br>dinamicamente</span>
+    <h4>Ubicacion: </h4>
     <!-- checkboxs -->
-    <mat-checkbox>Chile</mat-checkbox>
-    <mat-checkbox>Argentina</mat-checkbox>
-    <mat-checkbox>Peru</mat-checkbox>
-    <mat-checkbox>Colombia</mat-checkbox>
-    <mat-checkbox>Brasil</mat-checkbox>
-    <mat-checkbox>Uruguay</mat-checkbox>
+    <mat-checkbox color="primary" *ngFor="let offert of users">{{offert.city}}, {{offert.state}}</mat-checkbox>
     <h4>Tipo de Venta</h4>
-    <mat-checkbox>Venta</mat-checkbox>
-    <mat-checkbox>Trueque</mat-checkbox>
+    <mat-checkbox color="primary">Venta</mat-checkbox>
+    <mat-checkbox color="primary">Intercambio</mat-checkbox>
     <h4>Rango de Precio</h4>
-    <span>aqui iria un slider doble <br> y 2 input para ingreso manual</span>
-    <mat-slider min="0" max="100000" step="1000" value="0"></mat-slider>
+    <mat-slider color="primary" min="0" max="100000" step="1000" value="0"></mat-slider>
+    <!-- price inputs -->
+    <div class="">
+      <mat-form-field appearance="outline">
+        <mat-label>Minimo</mat-label>
+        <input matInput type="number" name="min">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Maximo</mat-label>
+        <input matInput type="number" name="max">
+      </mat-form-field>
+    </div>
     <h4>Fecha de Publicacion</h4>
-    <mat-checkbox value="1">Hoy</mat-checkbox>
-    <mat-checkbox value="2">Esta Semana</mat-checkbox>
-    <mat-checkbox value="3">Este Mes</mat-checkbox>
-    <h4>Mas filtros proximamente...</h4>
+    <mat-checkbox color="primary" value="1">Hoy</mat-checkbox>
+    <mat-checkbox color="primary" value="2">Esta Semana</mat-checkbox>
+    <mat-checkbox color="primary" value="3">Este Mes</mat-checkbox>
+    <h4>Estado</h4>
+    <mat-checkbox color="primary">Nuevo</mat-checkbox>
+    <mat-checkbox color="primary">Usado</mat-checkbox>
   </mat-drawer>
 
 </mat-drawer-container>

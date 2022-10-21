@@ -1,8 +1,9 @@
 <div class="header">
   <div class="container">
     <a class="logo" [routerLink]="['/home']">
-      <mat-icon>style</mat-icon>
-      <h1>App</h1>
+      <img src="../../../../assets/img/8.png" alt="logo">
+      <!-- <mat-icon>style</mat-icon> -->
+      <h1>Qatarsys</h1>
     </a>
 
     <!-- <div class="header-navigation">
@@ -25,22 +26,33 @@
       </ul>
     </div> -->
 
-    <div class="header-auth">
+    <div *ngIf="!token; else logged" class="header-auth">
       <div>
         <a [routerLink]="['/auth']">
-          <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base" (click)="onLogin()">
+          <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base">
             <span class="mat-button-wrapper">Login</span>
           </button>
         </a>
       </div>
       <div>
         <a [routerLink]="['/auth/signup']">
-          <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base" (click)="onLogout()">
+          <button mat-flat-button="" class="mat-focus-indicator mat-flat-button mat-button-base">
             <span class="mat-button-wrapper">Sign Up</span>
           </button>
         </a>
       </div>
     </div>
+
+    <ng-template #logged>
+      <button mat-raised-button [matMenuTriggerFor]="beforeMenu">Mi Cuenta</button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item [routerLink]="['dashboard']">Dashboard</button>
+        <button mat-menu-item [routerLink]="['dashboard/sell']">Vender</button>
+        <button mat-menu-item [routerLink]="['dashboard/messages']">Mensajes</button>
+        <button mat-menu-item (click)="logout()">Cerrar sesión</button>
+      </mat-menu>
+    </ng-template>
+
 
   </div>
 </div>
